@@ -1,0 +1,19 @@
+    {% load static %}
+
+    {## i.username#}
+    {## i.company_username#}
+    {## i.company_picture#}
+    {## i.company_name#}
+    {## i.company_location#}
+    {## i.company_category#}
+    {## i.company_tagline#}
+    {## i.company_description#}
+
+    <a href="single-company-profile?company_username={{ i.company_username }}" class="company">
+        <div class="company-inner-alignment">
+            <span class="company-logo"><img src="{% static i.company_picture %}" alt=""></span>
+            <h4>{{ i.company_name }}</h4>
+            <h4><span>{{ i.company_category }}</span></h4>
+            <h4><span>{{ i.company_tagline }}</span></h4>
+        </div>
+    </a>

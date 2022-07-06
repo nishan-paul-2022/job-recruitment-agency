@@ -1,0 +1,50 @@
+﻿{% include "_header.html" %}
+
+{% load static %}
+
+<!-- Page Content ================================================== -->
+<div class="full-page-container">
+    <!-- Dashboard Sidebar -->
+    {% include "_sidebar.html" %}
+
+	<!-- Full Page Content -->
+	<div class="full-page-content-container" data-simplebar="">
+		<div class="full-page-content-inner">
+
+			<!-- Dashboard Headline -->
+			{% include "_headline.html" %}
+
+			<!-- Employee List Container -->
+			<div class="freelancers-container freelancers-grid-layout">
+                <!-- Freelancer -->
+                {% include "_box_freelancer.html" %}
+			</div>
+			<!-- Employee Container / End -->
+
+			<!-- Pagination -->
+			<div class="clearfix"></div>
+			<div class="pagination-container margin-top-20 margin-bottom-20">
+				<nav class="pagination">
+					<ul>
+						<li class="pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-left"></i></a></li>
+						<li><a href="#" class="ripple-effect">1</a></li>
+						<li><a href="#" class="ripple-effect current-page">2</a></li>
+						<li><a href="#" class="ripple-effect">3</a></li>
+						<li><a href="#" class="ripple-effect">4</a></li>
+						<li class="pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-right"></i></a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="clearfix"></div>
+			<!-- Pagination / End -->
+
+            {% include "_footer2b.html" %}
+
+        </div>
+        <!-- Content-inner / End -->
+    </div>
+    <!-- Content / End -->
+</div>
+<!-- Container / End -->
+
+{% include "_footer2a.html" %}

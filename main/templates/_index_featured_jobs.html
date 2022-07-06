@@ -1,0 +1,38 @@
+{% load static %}
+
+{## i.username#}
+{## i.job_username#}
+{## i.job_timebegin#}
+{## i.job_category#}
+{## i.job_salary#}
+{## i.job_description#}
+{## i.job_postion#}
+
+<!-- Features Jobs -->
+<div class="section gray margin-top-45 padding-top-65 padding-bottom-75">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+
+				<!-- Section Headline -->
+				<div class="section-headline margin-top-0 margin-bottom-35">
+					<h3>Featured Jobs</h3>
+					<a href="freelancers-browse-jobs" class="headline-link">Browse Jobs</a>
+				</div>
+
+				<!-- Jobs Container -->
+				<div class="listings-container compact-list-layout margin-top-35">
+
+                    {% for i in data_job %}
+                        <!-- Job Listing -->
+                        {% include "_box_job.html" %}
+                    {% endfor %}
+
+				</div>
+				<!-- Jobs Container / End -->
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Featured Jobs / End -->

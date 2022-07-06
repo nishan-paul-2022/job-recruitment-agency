@@ -1,0 +1,14 @@
+{{ i.username }}
+{{ i.freelancer_picture }}
+{{ i.freelancer_name }}
+{{ i.freelancer_type }}
+{{ i.freelancer_phone }}
+{{ i.freelancer_salary }}
+{{ i.freelancer_skills }}
+{{ i.freelancer_tagline }}
+{{ i.freelancer_nationality }}
+{{ i.freelancer_description }}
+{{ i.freelancer_stats_company }}
+{{ i.freelancer_stats_job }}
+{{ i.freelancer_stats_job_offers }}
+{{ i.freelancer_stats_job_proposals }}

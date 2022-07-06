@@ -1,0 +1,38 @@
+{% include "_header.html" %}
+
+{% load static %}
+
+<!-- Page Content ================================================== -->
+<div class="full-page-container">
+
+    <!-- Dashboard Sidebar -->
+    {% include "_sidebar.html" %}
+
+	<!-- Full Page Content -->
+	<div class="full-page-content-container" data-simplebar="">
+		<div class="full-page-content-inner">
+
+			<!-- Dashboard Headline -->
+			{% include "_headline.html" %}
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="companies-list">
+                        <!-- Company -->
+                        {% for i in data_company %}
+                            {% include "_box_company.html" %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {% include "_footer2b.html" %}
+
+        </div>
+        <!-- Content-inner / End -->
+    </div>
+    <!-- Content / End -->
+</div>
+<!-- Container / End -->
+
+{% include "_footer2a.html" %}

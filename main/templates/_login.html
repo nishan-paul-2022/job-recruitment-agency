@@ -1,0 +1,60 @@
+{% load static %}
+
+<!-- Right Side Content / End -->
+<div class="right-side">
+
+    <!-- User Menu -->
+    <div class="header-widget">
+
+        <!-- Messages -->
+        <div class="header-notifications user-menu">
+
+            <div class="header-notifications-trigger">
+                <a href="#">
+                    <div class="user-avatar status-online">
+                        <img src="{% static request.session.freelancer_picture %}" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Dropdown -->
+            <div class="header-notifications-dropdown">
+
+                <!-- User Status -->
+                <div class="user-status">
+
+                    <!-- User Name / Avatar -->
+                    <div class="user-details">
+                        <div class="user-avatar status-online">
+                            <img src="{% static request.session.freelancer_picture %}" alt="">
+                        </div>
+                        <div class="user-name">
+                            {{ request.session.username }}
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="user-menu-small-nav">
+                    <li><a href="account-settings"><i class="icon-material-outline-settings"></i> Settings</a></li>
+                    <li><a href="urls_logout"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- User Menu / End -->
+
+    <!-- Mobile Navigation Button -->
+    <span class="mmenu-trigger">
+        <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </span>
+
+</div>
+<!-- Right Side Content / End -->
+

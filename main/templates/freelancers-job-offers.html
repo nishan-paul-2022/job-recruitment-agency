@@ -1,0 +1,47 @@
+﻿{% include "_header.html" %}
+{% load static %}
+
+
+<!-- Dashboard Container -->
+<div class="dashboard-container">
+
+    <!-- Dashboard Sidebar -->
+    {% include "_sidebar.html" %}
+
+	<!-- Dashboard Content ================================================== -->
+	<div class="dashboard-content-container" data-simplebar="">
+		<div class="dashboard-content-inner">
+
+			<!-- Dashboard Headline -->
+			{% include "_headline.html" %}
+
+			<!-- Row -->
+			<div class="row">
+				<!-- Dashboard Box -->
+				<div class="col-xl-12">
+					<div class="dashboard-box margin-top-0">
+
+						<div class="content">
+							<ul class="dashboard-box-list">
+                                <!-- Job Listing -->
+                                {% for i in data_job %}
+                                    {% include "_box_job2.html" %}
+                                {% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- Row / End -->
+
+            {% include "_footer2b.html" %}
+
+        </div>
+        <!-- Content-inner / End -->
+    </div>
+    <!-- Content / End -->
+</div>
+<!-- Container / End -->
+
+{% include "_footer2a.html" %}

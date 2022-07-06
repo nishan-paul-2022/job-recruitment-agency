@@ -1,0 +1,31 @@
+                {% load static %}
+
+				<!-- Job Listing -->
+				<a href="single-job-page?job_username={{ i.job_username }}" class="job-listing with-apply-button">
+
+					<!-- Job Listing Details -->
+					<div class="job-listing-details">
+						<!-- Logo -->
+						<div class="job-listing-company-logo">
+							<img src="{% static i.job_picture %}" alt="">
+						</div>
+
+						<!-- Details -->
+						<div class="job-listing-description">
+							<h3 class="job-listing-title">{{ i.job_title }}</h3>
+						</div>
+
+                        <!-- Apply Button -->
+                        <span class="list-apply-button ripple-effect">Apply Now</span>
+					</div>
+
+					<!-- Job Listing Footer -->
+					<div class="job-listing-footer">
+						<ul>
+                            <li><i class="icon-material-outline-business"></i> {{ i.company_username }}</li>
+                            <li><i class="icon-material-outline-location-on"></i> {{ i.job_location }}</li>
+                            <li><i class="icon-material-outline-business-center"></i> {{ i.job_type }}</li>
+                            <li><i class="icon-material-outline-access-time"></i> {{ i.job_timeend }}</li>
+						</ul>
+					</div>
+				</a>

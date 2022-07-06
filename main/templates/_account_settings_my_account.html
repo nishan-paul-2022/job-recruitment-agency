@@ -1,0 +1,69 @@
+                <!-- Dashboard Box -->
+                {% load static %}
+
+                <div class="col-xl-12">
+					<div class="dashboard-box margin-top-0">
+
+						<!-- Headline -->
+						<div class="headline">
+							<h3><i class="icon-material-outline-account-circle"></i> My Account</h3>
+						</div>
+
+						<div class="content with-padding padding-bottom-0">
+
+							<div class="row">
+
+								<div class="col-auto">
+									<div class="avatar-wrapper" data-tippy-placement="bottom" title="Change Avatar">
+										<img class="profile-pic" src="{% static data_freelancer.freelancer_picture %}" alt="">
+										<div class="upload-button"></div>
+										<input class="file-upload" type="file" accept="image/*" name='freelancer_picture'>
+									</div>
+								</div>
+
+								<div class="col">
+									<div class="row">
+
+										<div class="col-xl-6">
+											<div class="submit-field">
+												<h5>First Name</h5>
+												<input type="text" class="with-border" value="{{ data_freelancer.freelancer_name_first }}" name='freelancer_name_first'>
+											</div>
+										</div>
+
+										<div class="col-xl-6">
+											<div class="submit-field">
+												<h5>Last Name</h5>
+												<input type="text" class="with-border" value="{{ data_freelancer.freelancer_name_last }}" name='freelancer_name_last'>
+											</div>
+										</div>
+
+										<div class="col-xl-6">
+											<!-- Account Type -->
+											<div class="submit-field">
+												<h5>Account Type</h5>
+
+                                                <select class="selectpicker with-border" data-size="7" data-live-search="true" name='freelancer_type' title='{{ data_freelancer.freelancer_type }}'>
+                                                    {% for i in data_freelancer_type %}
+                                                        <option value="{{ i }}" {% if i == data_freelancer.freelancer_type %}selected="selected"{% endif %}>
+                                                            {{ i }}
+                                                        </option>
+                                                    {% endfor %}
+											    </select>
+											</div>
+										</div>
+
+										<div class="col-xl-6">
+											<div class="submit-field">
+												<h5>Phone</h5>
+												<input type="text" class="with-border" value="{{ data_freelancer.freelancer_phone }}" name='freelancer_phone'>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>

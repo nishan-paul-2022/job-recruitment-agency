@@ -1,0 +1,60 @@
+    {% load static %}
+
+    <!-- Candidate -->
+    <li>
+        <div class="freelancer-overview manage-candidates">
+            <div class="freelancer-overview-inner">
+
+                <!-- Avatar -->
+                <div class="freelancer-avatar">
+                    <a href="#"><img src="{% static i.freelancer_picture %}" alt=""></a>
+                </div>
+
+                <!-- Name -->
+                <div class="freelancer-name">
+                    <h4>
+                        <a href="single-freelancer-profile?username={{ i.username }}">
+                            {{ i.freelancer_name_first }} {{ i.freelancer_name_first }}
+                            <span>
+                                <i class="icon-material-outline-location-on"></i>
+                                {{ i.freelancer_nationality }}
+                            </span>
+                        </a>
+                    </h4>
+
+                    <!-- Details -->
+                    <span class="freelancer-detail-item">
+                        <a href="#">
+                            <i class="icon-feather-mail"></i>
+                            <span class="__cf_email__" data-cfemail="32415b5c564b72574a535f425e571c515d5f">
+                                {{ i.emailaddress }}
+                            </span>
+                        </a>
+                    </span>
+
+                    <span class="freelancer-detail-item">
+                        <i class="icon-feather-phone"></i>
+                        {{ i.freelancer_phone }}
+                    </span>
+
+                    <!-- Buttons -->
+                    <div class="buttons-to-right always-visible margin-top-25 margin-bottom-5">
+                        <!-- Form -->
+				        <form method="post" id="form_download_cv" action="urls_download_cv">
+                            {% csrf_token %}
+                            <input type="hidden" name="download_path" value="{{ j }}">
+                        </form>
+
+                        <button class="button ripple-effect" form="form_download_cv">
+                            <i class="icon-feather-file-text"></i>
+                            Download CV
+                        </button>
+
+                        <a href="#" class="button gray ripple-effect ico" title="Remove Candidate" data-tippy-placement="top">
+                            <i class="icon-feather-trash-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>

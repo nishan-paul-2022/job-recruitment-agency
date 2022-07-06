@@ -1,0 +1,175 @@
+﻿{% include "_header.html" %}
+
+{% load static %}
+
+<!-- Dashboard Container -->
+<div class="dashboard-container">
+
+    <!-- Dashboard Sidebar -->
+    {% include "_sidebar.html" %}
+
+	<!-- Dashboard Content ================================================== -->
+	<div class="dashboard-content-container" data-simplebar="">
+		<div class="dashboard-content-inner">
+
+			<!-- Dashboard Headline -->
+			{% include "_headline.html" %}
+
+            <form method="post" id="form_job" enctype='multipart/form-data' action="urls_job">
+                {% csrf_token %}
+
+                <!-- Row -->
+                <div class="row">
+
+                    <!-- Dashboard Box -->
+                    <div class="col-xl-12">
+                        <div class="dashboard-box margin-top-0">
+                            <div class="content with-padding padding-bottom-0">
+
+                                <div class="row">
+
+                                    <div class="col-auto">
+                                        <div class="avatar-wrapper" data-tippy-placement="bottom" title="Change Avatar">
+                                            <img class="profile-pic" src="{% static 'images/c_job_pofile_picture.jpg' %}" alt="">
+                                            <div class="upload-button"></div>
+                                            <input class="file-upload" type="file" accept="image/*" name='job_picture' required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="row">
+
+                                            <div class="col-xl-6">
+                                                <div class="submit-field">
+                                                    <h5>ID</h5>
+                                                    <input type="text" class="with-border" value="" name='job_username' required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-6">
+                                                <div class="submit-field">
+                                                    <h5>Title</h5>
+                                                    <input type="text" class="with-border" value="" name='job_title' required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-4">
+                                                <div class="submit-field">
+                                                    <h5>Category</h5>
+                                                    <select class="selectpicker with-border" data-size="7" title="-" data-live-search="true" name='job_category' required>
+                                                        {% for i in data_job_category %}
+                                                            <option value="{{ i.job_category }}" {% if i.job_category == data_jobs.job_category %}selected="selected"{% endif %}>
+                                                                {{ i.job_category }}
+                                                            </option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-4">
+                                                <div class="submit-field">
+                                                    <h5>Type</h5>
+                                                    <select class="selectpicker with-border" data-size="7" title="-" data-live-search="true" name='job_type' required>
+                                                        {% for i in data_job_type %}
+                                                            <option value="{{ i }}" {% if i == data_jobs.job_type %}selected="selected"{% endif %}>
+                                                                {{ i }}
+                                                            </option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-4">
+                                                <div class="submit-field">
+                                                    <h5>Company</h5>
+                                                    <select class="selectpicker with-border" data-size="7" title="-" data-live-search="true" name='company_username' required>
+                                                        {% for i in data_jobs_company_username %}
+                                                            <option value="{{ i.company_username }}" {% if i.company_username == data_jobs.company_username %}selected="selected"{% endif %}>
+                                                                {{ i.company_username }}
+                                                            </option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Box -->
+                    <div class="col-xl-12">
+                        <div class="dashboard-box">
+                            <div class="content">
+                                <ul class="fields-ul">
+                                    <li>
+                                        <div class="row">
+
+                                            <div class="col-xl-3">
+                                                <div class="submit-field">
+                                                    <h5>Annual Salary</h5>
+                                                    <input type="text" class="with-border" value="" name='job_salary' required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-3">
+                                                <div class="submit-field">
+                                                    <h5>Location</h5>
+                                                    <input type="text" class="with-border" value="" name='job_location' required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-3">
+                                                <div class="submit-field">
+                                                    <h5>Open Position</h5>
+                                                    <input type="text" class="with-border" value="" name='job_postion' required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-3">
+                                                <div class="submit-field">
+                                                    <h5>Expiring Date</h5>
+                                                    <input type="date" class="with-border" value="" name='job_timeend' required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12">
+                                                <div class="submit-field">
+                                                    <h5>Description</h5>
+                                                    <textarea cols="30" rows="5" class="with-border" name='job_description' required>
+                                                    </textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="col-xl-12">
+                        <button class="button ripple-effect big margin-top-30" type="submit" form="form_job">
+                            Save Changes
+                        </button>
+                    </div>
+
+                </div>
+                <!-- Row / End -->
+            </form>
+
+            {% include "_footer2b.html" %}
+
+        </div>
+        <!-- Content-inner / End -->
+    </div>
+    <!-- Content / End -->
+</div>
+<!-- Container / End -->
+
+{% include "_footer2a.html" %}

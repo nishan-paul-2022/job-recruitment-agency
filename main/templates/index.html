@@ -1,0 +1,54 @@
+﻿{% include "_header.html" %}
+
+{% load static %}
+
+<!-- Intro Banner ================================================== -->
+<!-- add class "disable-gradient" to enable consistent background overlay -->
+<div class="intro-banner disable-gradient" data-background-image="{% static 'images/d_background_home.jpg' %}">
+	<div class="container">
+		
+		<!-- Intro Headline -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="banner-headline">
+					<h3>
+						<strong>Recruit experts or be recruited.</strong>
+						<br>
+						<span>Use <strong class="color">Recrutar</strong> to turn your business ideas into reality.</span>
+					</h3>
+				</div>
+			</div>
+		</div>
+
+		<!-- Stats -->
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="intro-stats margin-top-45 hide-under-992px">
+					<li>
+						<strong class="counter">1,586</strong>
+						<span>Jobs Posted</span>
+					</li>
+					<li>
+						<strong class="counter">1,232</strong>
+						<span>Employee</span>
+					</li>
+                    <li>
+						<strong class="counter">1,232</strong>
+						<span>Company</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Featured Jobs -->
+{% include "_index_featured_jobs.html" %}
+
+<!-- Highest Rated Employee -->
+{% include "_index_highest_rated_employees.html" %}
+
+
+{% include "_footer.html" %}

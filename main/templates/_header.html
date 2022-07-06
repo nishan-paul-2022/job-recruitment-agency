@@ -1,0 +1,91 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs ================================================== -->
+    <title>Recrutar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS ================================================== -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/e_logo_webapp.jpg' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/colors/blue.css' %}">
+</head>
+
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header Container ================================================== -->
+<header id="header-container" class="fullwidth">
+
+	<!-- Header -->
+	<div id="header">
+		<div class="container">
+
+			<!-- Left Side Content -->
+			<div class="left-side">
+
+				<!-- Logo -->
+				<div id="logo">
+					<a href="index"><img src="{% static 'images/e_logo_header.jpg' %}" alt=""></a>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav id="navigation">
+					<ul id="responsive">
+
+						<li>
+                            <a href="#">Employee</a>
+							<ul class="dropdown-nav">
+								<li><a href="freelancers-browse-jobs">Browse Jobs</a></li>
+								<li><a href="freelancers-search-companies">Search Companies</a></li>
+                                <li><a href="freelancers-job-proposals">Job Proposals</a></li>
+                                <li><a href="freelancers-job-offers">Job Offers</a></li>
+							</ul>
+						</li>
+
+						<li>
+                            <a href="#">Employer</a>
+							<ul class="dropdown-nav">
+                                <li><a href="employers-manage-jobs">Manage Jobs</a></li>
+                                <li><a href="employers-search-freelancers">Search Employees</a></li>
+                                <li><a href="employers-post-a-job">Post a Job</a></li>
+                                <li><a href="employers-post-a-company">Post a Company</a></li>
+							</ul>
+						</li>
+
+						<li>
+                            <a href="#">About Us</a>
+							<ul class="dropdown-nav">
+                                <li><a href="about-us#contact">Contact</a></li>
+                                <li><a href="about-us#privacy_policies">Privacy Policies</a></li>
+                                <li><a href="about-us#terms_of_use"> Terms of Use</a></li>
+                            </ul>
+						</li>
+
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+
+			</div>
+			<!-- Left Side Content / End -->
+
+            {% if 'username' not in request.session %}  {% include '_logout.html' %}
+            {#{% if request.GET.tag == 'logout' %} {% include '_logout.html' %}#}
+            {% else %} {% include '_login.html' %}
+            {% endif %}
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+
+<div class="clearfix"></div>
+<!-- Header Container / End -->

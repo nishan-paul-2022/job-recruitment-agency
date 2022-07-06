@@ -1,0 +1,25 @@
+{% load static %}
+
+<!-- Sign In Popup ================================================== -->
+<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+
+	<!--Tabs -->
+	<div class="sign-in-form">
+
+		<ul class="popup-tabs-nav">
+			<li><a href="#login">Log In</a></li>
+			<li><a href="#register">Register</a></li>
+		</ul>
+
+		<div class="popup-tabs-container">
+
+			<!-- Login -->
+			{% include "_signin_form.html" %}
+
+			<!-- Register -->
+			{% include "_signup_form.html" %}
+
+		</div>
+	</div>
+</div>
+<!-- Sign In Popup / End -->

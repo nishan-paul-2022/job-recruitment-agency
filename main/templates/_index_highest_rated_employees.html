@@ -1,0 +1,26 @@
+{% load static %}
+
+<!-- Highest Rated Employee -->
+<div class="section gray padding-top-65 padding-bottom-70 full-width-carousel-fix">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xl-12">
+				<!-- Section Headline -->
+				<div class="section-headline margin-top-0 margin-bottom-25">
+					<h3>Highest Rated Employees</h3>
+					<a href="employers-search-freelancers" class="headline-link">Search Employees</a>
+				</div>
+			</div>
+
+			<div class="col-xl-12">
+				<div class="default-slick-carousel freelancers-container freelancers-grid-layout">
+                    <!-- Freelancer -->
+                    {% include "_box_freelancer.html" %}
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- Highest Rated Employee / End-->

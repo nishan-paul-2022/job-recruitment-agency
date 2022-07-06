@@ -1,0 +1,54 @@
+{% load static %}
+
+{% for i in data_freelancer %}
+    {% if i.freelancer_type == 'Employee' %}
+        {{ continue }}
+    {% endif %}
+
+    <!--Freelancer -->
+    <div class="freelancer">
+        <!-- Overview -->
+        <div class="freelancer-overview">
+            <div class="freelancer-overview-inner">
+                <!-- Avatar -->
+                <div class="freelancer-avatar">
+                    <a href="single-freelancer-profile?username={{ i.username }}">
+                        <img src="{% static i.freelancer_picture %}" alt="">
+                    </a>
+                </div>
+
+                <!-- Name -->
+                <div class="freelancer-name">
+                    <h4>
+                        <a href="single-freelancer-profile?username={{ i.username }}">
+                            {{ i.freelancer_name_first }} {{ i.freelancer_name_last }}
+                        </a>
+                        <i class="icon-material-outline-location-on"></i> <strong>{{ i.freelancer_nationality }}</strong>
+                    </h4>
+                    <h5>{{ i.freelancer_tagline }}</h5>
+                    <h5>Expected Salary {{ i.freelancer_salary }}</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details -->
+        <div class="freelancer-details">
+            <div class="freelancer-details-list">
+                <ul>
+                    {#<li>Phone <strong>{{ i.freelancer_phone }}</strong></li>#}
+                    {#<li>Email <strong>{{ i.emailaddress }}</strong></li>#}
+                    <li>Company <strong>{{ i.freelancer_stats_company }}</strong></li>
+                    <li>Job<strong>{{ i.freelancer_stats_job }}</strong></li>
+                    <li>Offers <strong>{{ i.freelancer_stats_offers }}</strong></li>
+                    <li>Proposals <strong>{{ i.freelancer_stats_proposals }}</strong></li>
+                </ul>
+            </div>
+
+            <a href="single-freelancer-profile?username={{ i.username }}" class="button button-sliding-icon ripple-effect">
+                View Profile
+                <i class="icon-material-outline-arrow-right-alt"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Freelancer / End -->
+{% endfor %}

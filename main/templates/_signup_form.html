@@ -1,0 +1,40 @@
+			<!-- Register -->
+			<div class="popup-tab-content" id="register">
+
+				<!-- Welcome Text -->
+				<div class="welcome-text">
+					<h3>Let's create your account!</h3>
+				</div>
+
+				<!-- Form -->
+				<form method="post" id="form_signup" action="urls_signup">
+                    {% csrf_token %}
+                    <!-- Account Type -->
+                    <div class="input-with-icon-left">
+						<i class="icon-material-baseline-mail-outline"></i>
+						<input type="text" class="input-text with-border" name="username" id="username-register" placeholder="Username" required>
+					</div>
+
+					<div class="input-with-icon-left">
+						<i class="icon-material-baseline-mail-outline"></i>
+						<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress-register" placeholder="Email Address" required>
+					</div>
+
+					<div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
+						<i class="icon-material-outline-lock"></i>
+						<input type="password" class="input-text with-border" name="password" id="password-register" placeholder="Password" required>
+					</div>
+
+					<div class="input-with-icon-left">
+						<i class="icon-material-outline-lock"></i>
+						<input type="password" class="input-text with-border" name="repeatpassword" id="password-repeat-register" placeholder="Repeat Password" required>
+					</div>
+				</form>
+
+				<!-- Button -->
+				<button class="margin-top-10 button full-width button-sliding-icon ripple-effect" type="submit" form="form_signup">
+                    Register
+                    <i class="icon-material-outline-arrow-right-alt"></i>
+                </button>
+
+			</div>

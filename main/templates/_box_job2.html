@@ -1,0 +1,49 @@
+    {% load static %}
+
+    <li>
+        <div class="job-listing">
+            <!-- Job Listing Details -->
+            <div class="job-listing-details">
+
+                <a href="#" class="job-listing-company-logo">
+                    <img src="{% static i.job_picture %}" alt="">
+                </a>
+
+                <!-- Details -->
+                <div class="job-listing-description">
+                    <h3 class="job-listing-title">
+                        <a href="#">{{ i.job_title }}</a>
+                        <span class="dashboard-status-button green">Pending</span>
+                        {#<span class="dashboard-status-button red">Expired</span>#}
+                        <a href="#">
+                            <i class="icon-material-outline-location-on"></i> {{ i.job_location }}
+                        </a>
+                    </h3>
+
+                    <!-- Job Listing Footer -->
+                    <div class="job-listing-footer">
+                        <ul>
+                            <li><i class="icon-material-outline-date-range"></i> {{ i.company_username }}</li>
+                            <li><i class="icon-material-outline-date-range"></i> {{ i.job_category }}</li>
+                            <li><i class="icon-material-outline-date-range"></i> {{ i.job_type }}</li>
+                            <li><i class="icon-material-outline-date-range"></i> {{ i.job_postion }}</li>
+                            <li><i class="icon-material-outline-date-range"></i> {{ i.job_salary }}</li>
+                            <li><i class="icon-material-outline-date-range"></i> {{ i.job_timeend }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons-to-right always-visible">
+            <a href="employers-manage-candidates?job_username={{ i.job_username }}&candidate_number={{ j }}" class="button ripple-effect">
+                <i class="icon-material-outline-supervisor-account"></i>
+                Manage Candidates
+                <span class="button-info">{{ j }}</span>
+            </a>
+            <a href="#" class="button gray ripple-effect ico" title="Remove" data-tippy-placement="top">
+                <i class="icon-feather-trash-2"></i>
+            </a>
+        </div>
+    </li>

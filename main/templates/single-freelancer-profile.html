@@ -1,0 +1,134 @@
+﻿{% include "_header.html" %}
+
+{% load static %}
+
+<!-- Titlebar ================================================== -->
+<div class="single-page-header freelancer-header" data-background-image="{% static 'images/d_background_freelancer.jpg' %}">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="single-page-header-inner">
+					<div class="left-side">
+						<div class="header-image freelancer-avatar">
+                            <img src="{% static data_freelancer_single.freelancer_picture %}" alt="">
+                        </div>
+						<div class="header-details">
+							<h3>
+                                {{ data_freelancer_single.freelancer_name_first }} {{ data_freelancer_single.freelancer_name_last }}
+                                <span>{{ data_freelancer_single.freelancer_tagline }}</span>
+                            </h3>
+							<ul>
+                                <li>
+                                    <i class="icon-material-outline-location-on"></i>
+                                    {{ data_freelancer_single.freelancer_nationality }}
+                                </li>
+							</ul>
+						</div>
+					</div>
+
+                    <div class="right-side">
+						<div class="salary-box">
+							<div class="salary-type">Expected Salary</div>
+							<div class="salary-amount">{{ data_freelancer_single.freelancer_salary }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Page Content ================================================== -->
+<div class="container">
+	<div class="row">
+		
+		<!-- Content -->
+		<div class="col-xl-8 col-lg-8 content-right-offset">
+			
+			<!-- Page Content -->
+			<div class="single-page-section">
+				<h3 class="margin-bottom-25">
+                    About <strong>{{ data_freelancer_single.freelancer_name_first }} {{ data_freelancer_single.freelancer_name_last }}</strong>
+                </h3>
+				<p>{{ data_freelancer_single.freelancer_description }}</p>
+			</div>
+
+		</div>
+		
+
+		<!-- Sidebar -->
+		<div class="col-xl-4 col-lg-4">
+			<div class="sidebar-container">
+
+				<!-- Button -->
+				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim margin-bottom-50">
+                    Make an Offer
+                    <i class="icon-material-outline-arrow-right-alt"></i>
+                </a>
+
+                <!-- Sidebar Widget -->
+				<div class="sidebar-widget">
+					<div class="job-overview">
+						<div class="job-overview-headline">Profile Summary</div>
+						<div class="job-overview-inner">
+							<ul>
+                                <li>
+									<i class="icon-material-outline-business-center"></i>
+									<span>
+                                        Company <strong>{{ data_freelancer_single.freelancer_stats_company }}</strong>
+                                    </span>
+								</li>
+								<li>
+									<i class="icon-material-outline-local-atm"></i>
+									<span>Job <strong>{{ data_freelancer_single.freelancer_stats_job }}</strong></span>
+								</li>
+								<li>
+									<i class="icon-material-outline-access-time"></i>
+									<span>Job Offers <strong>{{ data_freelancer_single.freelancer_stats_job_offers }}</strong></span>
+								</li>
+                                <li>
+                                    <i class="icon-material-outline-business-center"></i>
+                                    <span>Job Proposals <strong>{{ data_freelancer_single.freelancer_stats_job_proposals }}</strong></span>
+                                </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Widget -->
+				<div class="sidebar-widget">
+					<h3>Skills</h3>
+					<div class="task-tags">
+                        {% for j in freelancer_skills %}
+                            <span>{{ j }}</span>
+                        {% endfor %}
+					</div>
+				</div>
+
+				<!-- Sidebar Widget -->
+				<div class="sidebar-widget">
+					<h3>Share</h3>
+					<!-- Copy URL -->
+					<div class="copy-url">
+						<input id="copy-url" type="text" value="" class="with-border">
+						<button class="copy-url-button ripple-effect" data-clipboard-target="#copy-url" title="Copy to Clipboard" data-tippy-placement="top">
+                            <i class="icon-material-outline-file-copy"></i>
+                        </button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Spacer -->
+<div class="margin-top-15"></div>
+<!-- Spacer / End-->
+
+{% include "_popup_make_an_offer.html" %}
+
+{% include "_footer.html" %}
